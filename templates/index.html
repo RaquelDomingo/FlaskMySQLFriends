@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Friends Lists</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+      <h1>Friends:</h1>
+
+     <table>
+    <th>
+        <tr>
+            <td>Name:</td>
+            <td>Age</td>
+            <td>Friend Since</td>
+            <td>Year</td>
+        </tr>
+    </th>   
+    {% for friend in all_friends: %} 
+        <tr>
+            <td>{{ friend['name'] }}</td>
+                
+            <td>{{ friend['age'] }}</td>
+            
+            <td>{{ friend['since'] }}</td>
+                
+            <td>{{ friend['year'] }}</td>
+            
+        {% endfor %}
+        </tr>
+    </table>
+</div>
+
+  <h2>Add a Friend</h2>
+  <form action='/friends' method='POST'>
+    <label for="name">Name:
+        <input type="text" name="name" id="name"></label>
+    <br>
+    <br>
+    <label for="age">Age:
+        <input type="text" name="age" id="age"></label>
+    <br>
+    <br>
+    <label for="since">Since:
+        <input type="text" name="since" id="since"></label>
+    <br>
+    <br>
+    <label for="year">Year:
+        <input type="text" name="year" id="year"></label>
+    <br>
+    <br>
+    <input type="submit" value="Add">
+
+
+
+</table>
+
+
+
+</body>
+</html>
